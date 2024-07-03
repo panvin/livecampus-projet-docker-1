@@ -1,13 +1,11 @@
 # Projet Docker Livecampus
-## Promotion ECI P2025 - 1/7/24 - 5/7/24
-###               Ludivine URHYN  Florian MUGLIONI    Vincent PANOUILLERES 
+## Promotion ECI P2025 - 1/7/24 au 5/7/24
+## Ludivine URHYN  Florian MUGLIONI    Vincent PANOUILLERES 
 
 
-— — — — — — — — — —
+### Création du projet web React
 
-# Création du projet web React
-
-## Installation de nodejs
+- Installation de nodejs
 
 ```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
@@ -17,7 +15,7 @@ node -v
 npm -v
 ```
 
-## Création du squelette d'application react
+- Création du squelette d'application react
 
 ```bash
 # Créer un dossier pour l'application (hors dossier projet)
@@ -34,9 +32,9 @@ Copier le fichier `app/app-react/package.json` dans `projet-docker/docker/web/`.
 
 — — — — — — — — — —
 
-# Création de certificats autosignés pour le reverse proxy
+### Création de certificats autosignés pour le reverse proxy
 
-## Génération des fichiers cer et key
+- Génération des fichiers cer et key
 
 ```bash
 sudo openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -keyout ./proxy/docker-projet.key -out ./proxy/docker-projet.crt -config ./proxy/docker-projet-cert.conf -passin pass:YourStrongPassword
@@ -44,7 +42,7 @@ sudo openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -keyout ./proxy/docker
 
 — — — — — — — — — —
 
-# Mise en route et arrêt du projet
+### Mise en route et arrêt du projet
 
 ```bash
 # Se placer dans le répertoire
@@ -57,7 +55,8 @@ docker compose down
 docker compose down -v
 ```
 
-**Se connecter via:**
-    https://localhost/ -> Accès appli réact
-    https://localhost/api/ -> Accès à l'API node
+> [!NOTE]
+> **URLs d'accès à l'application:**
+> - https://localhost/ -> Accès appli réact
+> - https://localhost/api/ -> Accès à l'API node
 
