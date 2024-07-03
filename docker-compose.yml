@@ -1,0 +1,52 @@
+services:
+ 
+  proxy:
+    image: nginx:latest
+    networks:
+      - frontend-web
+      - frontend-api
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./proxy/nginx-ssl.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./proxy/projet-docker.crt:/etc/ssl/certs/projet-docker.crt:ro
+      - ./proxy/projet-docker.key:/etc/ssl/private/projet-docker.key:ro
+    depends_on:
+     - server-web
+     - server-api
+
+  server-web:
+    build:
+      context: ./docker/web/
+    networks:
+      - frontend-web
+
+  server-api:
+    build:
+      context: ./docker/api/
+    networks:
+      - frontend-api
+      - backend
+    depends_on:
+     - mongodb
+
+  mongodb:
+    image: mongo
+    env_file: ./mongodb/mongodb.env
+    networks:
+      - backend
+    volumes:
+      - ./mongodb/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+      - volumedb:/data/db
+
+networks:
+  frontend-api:
+    driver: bridge
+  frontend-web:
+    driver: bridge
+  backend:
+    driver: bridge
+
+volumes:
+  volumedb:
