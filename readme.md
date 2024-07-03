@@ -25,10 +25,14 @@ cd app
 npx create-react-app app-react -y
 ```
 
-Copier le contenu du dossier `app/app-react/src` dans `projet-docker/docker/web/src`.
-Remplacer le fichier `app/app-react/src/App.js` par un fichier `App.js` afin d'avoir une app basique qui fait des requêtes sur l'API.
-Copier le contenu du dossier `app/app-react/public` dans `projet-docker/docker/web/public`.
-Copier le fichier `app/app-react/package.json` dans `projet-docker/docker/web/`.
+- Copie du contenu du dossier `app/app-react/src` dans `projet-docker/docker/web/src`.
+
+- Copie du fichier `app/app-react/src/App.js` par un fichier `App.js` afin d'avoir une app basique qui fait des requêtes 
+sur l'API.
+
+- Copie du contenu du dossier `app/app-react/public` dans `projet-docker/docker/web/public`.
+
+- Copie du fichier `app/app-react/package.json` dans `projet-docker/docker/web/`.
 
 — — — — — — — — — —
 
