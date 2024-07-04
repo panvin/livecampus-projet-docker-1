@@ -1,6 +1,6 @@
 # Projet Docker Livecampus
 ## Promotion ECI P2025 - 1/7/24 au 5/7/24
-## Ludivine URHYN  Florian MUGLIONI    Vincent PANOUILLERES 
+## Ludivine UHRYN  Florian MUGLIONI    Vincent PANOUILLERES 
 
 
 ### Création du projet web React
@@ -55,7 +55,7 @@ cd projet-docker
 docker compose up -d
 # Arrêt du projet
 docker compose down
-# Arrêt du projet
+# Arrêt du projet et supression des volumes
 docker compose down -v
 ```
 
